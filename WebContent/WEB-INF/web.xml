@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	version="3.1">
+
+<!-- 	Subject: web.xml			-->
+<!--	Filename: web.xml			-->
+<!--	Created Date: 2020-09-17	-->
+<!--	* Description:				--> 
+<!-- 	1.							--> 
+
+	<display-name>edu-mybatis</display-name>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+		
+	<!-- Board List -->
+	<servlet>
+		<servlet-name>boardList</servlet-name>
+		<servlet-class>com.edu.view.BoardListServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardList</servlet-name>
+		<url-pattern>/board/list.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Board Insert -->
+	<servlet>
+		<servlet-name>boardInsert</servlet-name>
+		<servlet-class>com.edu.view.BoardInsertServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardInsert</servlet-name>
+		<url-pattern>/board/insert.do</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Board Delete -->
+	<servlet>
+		<servlet-name>boardDelete</servlet-name>
+		<servlet-class>com.edu.view.BoardDeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>boardDelete</servlet-name>
+		<url-pattern>/board/delete.do</url-pattern>
+	</servlet-mapping>
+	
+</web-app>
