@@ -39,7 +39,6 @@ public class BoardUpdateServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		
-
 		res.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = res.getWriter();
 		
@@ -50,7 +49,12 @@ public class BoardUpdateServlet extends HttpServlet {
 		dbNode.setNum(3);
 		dbNode.setName("도도수정" + serialVersionUID);
 		dbNode.setAddress("행복시 행복동");
-		dbNode.setBirthdate(new Timestamp(2020, 6, 1, 0, 0, 0, 0));
+
+		// 버그1: new Date() 사용안됨. (2020을 3920으로 인식함.) 
+		// 버그2: new Timestamp() 사용안됨. (2020을 3920으로 인식함.)
+		String userDate = "2020-07-01";
+		java.sql.Timestamp sqlDate = java.sql.Timestamp.valueOf(userDate);
+		dbNode.setBirthdate(sqlDate);
 		
 		int result = address.updateAddress(dbNode);
 		AddressDto addressDto = address.getAddress(3);
