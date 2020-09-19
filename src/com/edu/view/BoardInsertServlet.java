@@ -51,7 +51,12 @@ public class BoardInsertServlet extends HttpServlet {
 		AddressDto dbNode = new AddressDto(); 
 		dbNode.setName("도도" + serialVersionUID);
 		dbNode.setAddress("행복시 행복동");
-		dbNode.setBirthdate(new Timestamp(2020, 1, 1, 0, 0, 0, 0));
+		
+		// 버그1: new Date() 사용안됨. (2020을 3920으로 인식함.) 
+		// 버그2: new Timestamp() 사용안됨. (2020을 3920으로 인식함.)
+		String userDate = "2020-02-01";
+		java.sql.Timestamp sqlDate = java.sql.Timestamp.valueOf(userDate);
+		dbNode.setBirthdate(sqlDate);
 		
 		int result = address.insertAddress(dbNode);
 		AddressDto addressDto = address.getAddress(1);
