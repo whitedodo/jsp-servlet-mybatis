@@ -16,5 +16,6 @@ JSP/Servlet으로 MyBatis 영속 프레임워크를 활용한 프로젝트(MVC m
 ##### (When you forget to use MyBatis or do it, it is made to quickly and easily adapt.)
 
 ### 2. 시연(Demonstration)
+##### 1. Jsp/Servlet-mybatis(CRUD) - tomcat 9, Oracle 19g, https://www.youtube.com/watch?v=c3tQnaNiOAQ, Accessed by 2020-09-21, Last Modified 2020-09-21.
 
 ### 3. 참고자료(Reference)
