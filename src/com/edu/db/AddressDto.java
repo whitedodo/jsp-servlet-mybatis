@@ -1,13 +1,13 @@
 package com.edu.db;
 
-import java.sql.Timestamp;
+import java.sql.Date;
 
 public class AddressDto {
 	
 	private int num;
 	private String name;
 	private String address;
-	private Timestamp birthdate;
+	private Date birthdate;
 	
 	public int getNum() {
 		return num;
@@ -33,11 +33,11 @@ public class AddressDto {
 		this.address = address;
 	}
 	
-	public Timestamp getBirthdate() {
+	public Date getBirthdate() {
 		return birthdate;
 	}
 	
-	public void setBirthdate(Timestamp birthdate) {
+	public void setBirthdate(Date birthdate) {
 		this.birthdate = birthdate;
 	}
 	
