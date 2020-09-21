@@ -5,6 +5,7 @@
  * 	Filename: BoardUpdate.java
  *  	Description: 
  *  	1. MyBatis 적용함.
+ *      2. 2020-09-21 / Dodo / Bug 수정 (Timestamp->Date로 SQL 업데이트 변경)
  *  
  */
 
@@ -12,7 +13,7 @@ package com.edu.view;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Timestamp;
+import java.sql.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -53,7 +54,7 @@ public class BoardUpdateServlet extends HttpServlet {
 		// 버그1: new Date() 사용안됨. (2020을 3920으로 인식함.) 
 		// 버그2: new Timestamp() 사용안됨. (2020을 3920으로 인식함.)
 		String userDate = "2020-07-01";
-		java.sql.Timestamp sqlDate = java.sql.Timestamp.valueOf(userDate);
+		java.sql.Date sqlDate = java.sql.Date.valueOf(userDate);
 		dbNode.setBirthdate(sqlDate);
 		
 		int result = address.updateAddress(dbNode);
